@@ -1,0 +1,150 @@
+#handshake {
+  width: 384px;
+  position: absolute;
+  top: 88px;
+  left: 525px;
+}
+.all {
+  background-color: aliceblue;
+}
+.home {
+  display: flex;
+  justify-content: space-between;
+  background-color: aliceblue;
+  margin-bottom: 35px;
+}
+
+#quote {
+  width: 384px;
+
+  margin-top: 148px;
+  margin-left: 74px;
+
+  font-family: "Merriweather", serif;
+  color: #24337d;
+  font-size: 41px;
+}
+span {
+  color: #f3725f;
+}
+h6 {
+  margin-top: 304px;
+  position: absolute;
+  width: 316px;
+
+  left: 76px;
+  color: #5f656a;
+}
+#slider {
+  margin-top: 231px;
+}
+.explanation {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.ex p {
+  color: #8c8c8c;
+  font-size: 11px;
+  width: 104px;
+  text-align: center;
+}
+.ex h2 {
+  font-size: 16px;
+  font-weight: 600;
+  width: 130px;
+  text-align: center;
+}
+.ex img {
+  width: 122px;
+  height: 116px;
+  margin: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ex {
+  overflow-wrap: break-word;
+  padding: 30px 30px 30px 30px;
+  border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-color: #e4e6ea;
+  border-radius: 0px 0px 0px 0px;
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s,
+    transform var(--e-transform-transition-duration, 0.4s);
+}
+
+.question {
+  color: #1a3454;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 52px;
+  font-family: "Merriweather", serif;
+}
+#hand {
+  width: 384px;
+  margin-top: -166px;
+  margin-left: 546px;
+}
+#whatwedo {
+  position: relative;
+  font-family: "Merriweather", serif;
+  color: #1a3454;
+  color: #1a3454;
+  font-size: 26px;
+  font-weight: 660;
+  top: 96px;
+  left: 106px;
+}
+#wedo {
+  position: relative;
+  position: relative;
+  color: #5f656a;
+  font-size: 19px;
+  width: var(--container-widget-width, 400px);
+  left: -506px;
+  top: 144px;
+}
+.testimonial {
+  background-image: url(https://internme.app/public/assets/img/testiBg.png);
+}
+.testimonial img {
+  height: auto;
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  width: 80px;
+  height: 80px;
+}
+.testimonial h4 {
+  margin: 20px 0px 20px;
+  font-size: 18px;
+
+  font-weight: 500;
+  line-height: 1.3;
+  color: #44495b;
+
+  padding: 0 30px;
+  font-family: "Sora" !important;
+}
+.testimonial p {
+  margin-top: -16px;
+  margin-bottom: 1rem;
+
+  font-weight: 500;
+  line-height: 1.3;
+  color: #f3725f;
+  font-size: 16px;
+  font-family: "Sora" !important;
+}
+#svg {
+  width: 1011px;
+  height: 64px;
+  font-size: 101px;
+  color: #24337d;
+  margin: -1px 0 24px;
+  display: inline-block;
+}
