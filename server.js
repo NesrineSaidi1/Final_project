@@ -13,7 +13,7 @@ app.use(cors());
 app.use("/user", require("./routes/user"));
 app.use("/request", require("./routes/request"));
 app.use("/internship", require("./routes/internship"));
-app.use("/entity", require("./routes/entity"));
+//app.use("/entity", require("./routes/entity"));
 //server
 const PORT = process.env.PORT;
 app.listen(PORT, (err) =>

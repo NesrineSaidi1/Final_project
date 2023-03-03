@@ -4,6 +4,7 @@ import { userRegister } from "../JS/userSlice/userSlice";
 import { Link, useNavigate } from "react-router-dom";
 function Register({ ping, setping }) {
   const [register, setregister] = useState({
+    img: "https://w7.pngwing.com/pngs/754/2/png-transparent-samsung-galaxy-a8-a8-user-login-telephone-avatar-pawn-blue-angle-sphere-thumbnail.png",
     name: "",
     LastName: "",
     email: "",
@@ -58,14 +59,15 @@ function Register({ ping, setping }) {
               setregister({ ...register, password: e.target.value })
             }
           />
-
+          <br />
           <button
-            className="btn btn-lg btn-primary btn-block"
+            className="ymin"
+            style={{ marginLeft: "34px" }}
             onClick={() => {
               setTimeout(() => {
                 dispatch(userRegister(register));
                 setping(!ping);
-                navigate("/profil");
+                navigate("/");
               }, 1000);
             }}
           >
@@ -73,10 +75,11 @@ function Register({ ping, setping }) {
           </button>
 
           <h5>
-            u already have account{" "}
+            <br />
+            You already have account{" "}
             <Link style={{ textDecoration: "none" }} to="/logi">
               {" "}
-              <span>sign in </span>
+              <span>Log in </span>
             </Link>{" "}
           </h5>
         </form>

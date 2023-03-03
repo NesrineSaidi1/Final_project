@@ -26,5 +26,9 @@ const EntitySchema = new schema({
     type: Boolean,
     required: true,
   },
+  Domain: {
+    type: String,
+    required: true,
+  },
 });
 module.exports = mongoose.model("Entity", EntitySchema);

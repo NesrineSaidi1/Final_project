@@ -2,34 +2,38 @@ const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 // nasna3 fi din om stage
 const internshipSchema = new schema({
-  id_Entity: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Entity",
-    required: true,
+  UserName:{String},
+  Entityname: { String },
+  internshipname: {
+    type: String,
   },
   Domain: {
     type: String,
-    required: true,
   },
   Duration: {
-    type: Number,
-    required: true,
+    type: String,
   },
   Post_av: {
-    type: Number,
-    required: true,
+    type: String,
+  },
+  Salary: {
+    type: String,
   },
   Location: {
     type: String,
-    required: true,
+  },
+  Description: {
+    type: String,
   },
   isPaid: {
-    type: Boolean,
-    required: true,
+    type: String,
   },
   Timing: {
     type: String,
-    required: true,
+  },
+
+  img: {
+    type: String,
   },
 });
 const Internship = mongoose.model("internship", internshipSchema);

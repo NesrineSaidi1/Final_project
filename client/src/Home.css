@@ -109,6 +109,7 @@ h6 {
 }
 .testimonial {
   background-image: url(https://internme.app/public/assets/img/testiBg.png);
+  height: 459px;
 }
 .testimonial img {
   height: auto;

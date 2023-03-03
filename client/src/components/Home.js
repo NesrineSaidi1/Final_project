@@ -2,12 +2,13 @@ import React from "react";
 import "../Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Carousel from "react-bootstrap/Carousel";
+import Footer from "./Footer";
 
 function Home() {
   return (
     <div className="all">
       {/* welcome section */}
-      <div className="home">
+      <div className="home" style={{ zIndex: "-1" }}>
         <h1 id="quote">
           “Internship: The <span>key</span> to your <span>biggest </span>
           carrer opportunity”
@@ -58,7 +59,7 @@ function Home() {
         </Carousel>
       </div>
       {/* what we do section */}
-      <section>
+      <section id="About">
         <div style={{ backgroundColor: "white" }} className="home">
           <h1 id="whatwedo">What we do ?</h1>
           <p id="wedo">
@@ -286,6 +287,9 @@ function Home() {
           <p>Nesrine Saidi</p>
         </div>
       </section>
+      <div className="ff">
+        <Footer />
+      </div>
     </div>
   );
 }

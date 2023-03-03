@@ -2,25 +2,16 @@ const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
 const requestSchema = new schema({
-  id_Intern: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "internship",
-    required: true,
-  },
-  id_User: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
-    required: true,
-  },
-  id_Entity: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Entity",
-    required: true,
-  },
-  isValid: {
-    type: Boolean,
-    default: false,
-  },
+  name: String,
+  lastname: String,
+  age: Number,
+  intrenshipname: String,
+  entityshipname: String,
+  email: String,
+  duration: String,
+  phonenumber: String,
+  diplome: String,
+  skills: String,
 });
 const Request = mongoose.model("request", requestSchema);
 module.exports = Request;

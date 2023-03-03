@@ -134,9 +134,7 @@ a {
   text-decoration: none !important;
 }
 
-.fa {
-  color: red;
-}
+
 .list1 {
   display: flex;
   list-style: none;
@@ -166,10 +164,9 @@ a {
   background-color: white;
   margin-top: -42px;
 }
-.mt-3 {
+
+.BBBTn {
   margin-top: 11rem !important;
-}
-.btn-warning {
   background: #24337d;
   border-radius: 6px;
 
@@ -180,9 +177,14 @@ a {
   font-size: 13px;
   border-color: #24337d;
 }
-.btn-warning:hover {
+/* .BBBTn:hover {
   background-color: rgb(97, 97, 197);
   color: white;
   text-decoration: none;
   border-color: rgb(97, 97, 197);
+  
+} */
+
+.buttonapply:hover {
+  background-color: #128b79;
 }

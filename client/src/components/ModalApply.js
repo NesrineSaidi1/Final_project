@@ -1,75 +1,77 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import "bootstrap/dist/css/bootstrap.min.css";
+import PureModal from "react-pure-modal";
+import "react-pure-modal/dist/react-pure-modal.min.css";
+
 import Form from "react-bootstrap/Form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addrequest } from "../JS/RequestSlice";
-function ModalApply() {
-  const [newrequest, setnewrequest] = useState({
-    name: "",
-    lastname: "",
+import Swal from "sweetalert2";
+
+function ModalApply({ internship }) {
+  const [modal, setModal] = useState(false);
+  const user = useSelector((state) => state.user?.user);
+  const dispatch = useDispatch();
+  const [request, setrequest] = useState({
+    name: user?.name,
+    lastname: user?.LastName,
     age: "",
-    email: "",
-    Phonenumber: "",
+    intrenshipname: internship?.internshipname,
+    entityshipname: internship?.Entityname,
+    email: user?.email,
+    duration: internship?.Duration,
+    phonenumber: "",
     diplome: "",
     skills: "",
   });
-  const dispatch = useDispatch();
   return (
-    <div style={{ width: "70%" }}>
-      <div className="Form">
-        {" "}
+    <div>
+      <button className="buttonapply" onClick={() => setModal(true)}>
+        Apply
+      </button>
+      <PureModal
+        header={internship.internshipname}
+        footer={
+          <div>
+            <button>Cancel</button>
+            <button
+              onClick={() => {
+                dispatch(addrequest(request));
+                Swal.fire(
+                  "Good job!",
+                  "You applied for this internship!",
+                  "Good luck!"
+                );
+              }}
+            >
+              Apply
+            </button>
+          </div>
+        }
+        isOpen={modal}
+        width="758px"
+        closeButton="close"
+        closeButtonPosition="bottom"
+        onClose={() => {
+          setModal(false);
+          return true;
+        }}
+      >
         <Form>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <h3>Please Enter Your Details</h3>
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter your name"
-              onChange={(e) =>
-                setnewrequest({ ...newrequest, name: e.target.value })
-              }
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Last Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter your Last name"
-              onChange={(e) =>
-                setnewrequest({ ...newrequest, lastname: e.target.value })
-              }
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          {/* <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Age</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter your age"
-              onChange={(e) =>
-                setnewrequest({ ...newrequest, age: e.target.value })
-              }
+              placeholder="Enter Age"
+              onChange={(e) => setrequest({ ...request, age: e.target.value })}
             />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-              validated
-              type="email"
-              placeholder="Enter your email"
-              onChange={(e) =>
-                setnewrequest({ ...newrequest, email: e.target.value })
-              }
-            />
-          </Form.Group>
+          </Form.Group> */}
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Phone Number</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter your phone number"
+              placeholder="Enter Phone Number"
               onChange={(e) =>
-                setnewrequest({ ...newrequest, Phonenumber: e.target.value })
+                setrequest({ ...request, phonenumber: e.target.value })
               }
             />
           </Form.Group>
@@ -77,9 +79,9 @@ function ModalApply() {
             <Form.Label>Diplome</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter your diplome"
+              placeholder="Enter Diplome"
               onChange={(e) =>
-                setnewrequest({ ...newrequest, diplome: e.target.value })
+                setrequest({ ...request, diplome: e.target.value })
               }
             />
           </Form.Group>
@@ -87,15 +89,15 @@ function ModalApply() {
             <Form.Label>Skills</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter your skills"
+              placeholder="Enter Skills"
               onChange={(e) =>
-                setnewrequest({ ...newrequest, skills: e.target.value })
+                setrequest({ ...request, skills: e.target.value })
               }
             />
           </Form.Group>
         </Form>
-        <Button onClick={() => dispatch(addrequest(newrequest))}>Apply</Button>
-      </div>
+      </PureModal>
+      ;
     </div>
   );
 }

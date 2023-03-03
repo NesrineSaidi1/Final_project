@@ -14,7 +14,7 @@
   box-shadow: 10px 10px 71px -22px rgba(0, 0, 0, 0.21);
   -webkit-box-shadow: 10px 10px 71px -22px rgba(0, 0, 0, 0.21);
   -moz-box-shadow: 10px 10px 71px -22px rgba(0, 0, 0, 0.21);
-  overflow: hidden;
+  /* overflow: hidden; */
   position: fixed;
   z-index: 1;
 }
@@ -56,18 +56,15 @@
   padding-left: 30px;
   border-radius: 10px;
   font-size: 14px;
-  transition: 0.2s ease-in-out;
+
   text-decoration: none;
 }
 .ysar:hover {
   background-color: #18297d;
   color: white;
-  padding: 7px 30px;
-  padding-right: 30px;
-  padding-left: 30px;
+
   border-radius: 10px;
   font-size: 14px;
-  transition: 0.2s ease-in-out;
   text-decoration: none;
 }
 
@@ -83,4 +80,17 @@
 .left {
   text-decoration: none;
   color: #18297d;
+}
+/* .dropabs{
+background-color: red;
+z-index: 99 !important;
+position: fixed;
+margin: 20px;
+} */
+.dropdown-content {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.17);
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
 }

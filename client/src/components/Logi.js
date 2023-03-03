@@ -55,19 +55,17 @@ function Logi() {
               Remember me
             </label>
             <button
+              style={{ marginLeft: "52px", marginBottom: "10px" }}
               className="ymin"
               onClick={() => {
-                
-                  dispatch(userlogi(logi));
-               
-                 
-                
+                dispatch(userlogi(logi));
               }}
             >
               login
             </button>
+            <br />
             <h5>
-              u already have account{" "}
+              You don't have account{" "}
               <Link style={{ textDecoration: "none" }} to="/register">
                 <span>Register now</span>
               </Link>{" "}

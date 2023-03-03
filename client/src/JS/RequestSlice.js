@@ -10,17 +10,14 @@ export const getrequest = createAsyncThunk("request/get", async (req, res) => {
   }
 });
 
-export const addrequest = createAsyncThunk(
-  "request/add",
-  async (newrequest) => {
-    try {
-      let result = axios.post("http://localhost:5001/request/add", newrequest);
-      return result;
-    } catch (error) {
-      console.log(error);
-    }
+export const addrequest = createAsyncThunk("request/add", async (request) => {
+  try {
+    let result = axios.post("http://localhost:5001/request/add", request);
+    return result;
+  } catch (error) {
+    console.log(error);
   }
-);
+});
 
 export const deleterequest = createAsyncThunk("request/delete", async (id) => {
   try {

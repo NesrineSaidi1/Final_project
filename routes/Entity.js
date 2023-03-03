@@ -10,7 +10,7 @@ const bcrypt = require("bcrypt");
 const isAuth = require("../middleware/passport");
 const jwt = require("jsonwebtoken");
 const Internship = require("../models/internship");
-//add intern
+//add entity
 Router.post(
   "/register",
   registerEntityRules(),
@@ -110,3 +110,4 @@ Router.put("/:id", async (req, res) => {
 });
 
 module.exports = Router;
+ 

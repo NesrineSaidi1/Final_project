@@ -1,17 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import Button from "react-bootstrap/Button";
 import "../Explore.css";
 import { getinternshipWithFilter } from "../JS/internshipSlice";
 function Explore() {
-  //   location: String,
-  // Timing: String,
-  // img: String,
-  // domain: String,
-  // description: String,
-  // details: String,
-  // Duration: String,
   const [filterObject, setfilterObject] = useState({});
   const dispatch = useDispatch();
   const [filter, setfilter] = useState("back");
@@ -176,12 +169,10 @@ function Explore() {
                             />
                           </div>
                           <div className="media-body">
-                            <h3>{el.internshipname}</h3>
-                            <h6 className="media-title font-weight-semibold">
-                              <a href="#" data-abc="true">
-                                Apple iPhone XR (Red, 128 GB)
-                              </a>
-                            </h6>
+                            <h3 style={{ marginLeft: "30px" }}>
+                              {el.internshipname}
+                            </h3>
+
                             <ul className="list1">
                               <li>
                                 <svg
@@ -226,21 +217,9 @@ function Explore() {
                               </li>
                             </ul>
                             <ul className="list2">
-                              <li>{el.location}</li>
+                              <li>{el.Location}</li>
                               <li>{el.Duration}</li>
                               <li>{el.Timing}</li>
-                            </ul>
-
-                            <ul className="list-inline list-inline-dotted mb-0">
-                              <li className="list-inline-item">
-                                All items from <a href="#" data-abc="true"></a>
-                              </li>
-                              <li className="list-inline-item">
-                                Add to{" "}
-                                <a href="#" data-abc="true">
-                                  wishlist
-                                </a>
-                              </li>
                             </ul>
                           </div>
                           <div
@@ -254,13 +233,27 @@ function Explore() {
                               <i className="fa fa-star" />
                             </div>
                             <Link to={`/details/${el._id}`}>
-                              <button
-                                type="button"
-                                className=" btn btn-warning mt-4 text-white"
-                              >
-                                <i className="icon-cart-add mr-2" /> View
-                                Details
-                              </button>
+                              <Button className="BBBTn" variant="primary">
+                                View Details
+                                <svg
+                                  style={{ width: "14px" }}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="16"
+                                  height="16"
+                                  fill="currentColor"
+                                  class="bi bi-chevron-double-right"
+                                  viewBox="0 0 16 16"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"
+                                  />
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"
+                                  />
+                                </svg>
+                              </Button>{" "}
                             </Link>
                           </div>
                         </div>
@@ -269,17 +262,6 @@ function Explore() {
                   </div>
                 </div>
               </div>
-              // <Card style={{ width: "18rem", margin: "6px" }}>
-              //   <Card.Img variant="top" src="holder.js/100px180" />
-              //   <Card.Body>
-              //     <Card.Title>{el.internshipname}</Card.Title>
-              //     <Card.Text>
-              //       Some quick example text to build on the card title and make
-              //       up the bulk of the card's content.
-              //     </Card.Text>
-              //     <Button variant="primary">See More</Button>
-              //   </Card.Body>
-              // </Card>
             ))}
           </div>
         )}

@@ -27,12 +27,31 @@ export const userCurrent = createAsyncThunk("user/current", async () => {
         Authorization: localStorage.getItem("token"),
       },
     });
-    console.log(response.data);
+    console.log(response);
     return await response;
   } catch (error) {
     console.log(error);
   }
 });
+
+export const deleteuser = createAsyncThunk("user/delete", async (id) => {
+  try {
+    let result = axios.delete(`http://localhost:5001/user/${id}`);
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+export const edituser = createAsyncThunk("user/edit", async ({ id, edit }) => {
+  try {
+    let result = axios.put(`http://localhost:5001/user/${id}`, edit);
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 const initialState = {
   user: null,
   status: null,
@@ -65,7 +84,7 @@ export const userSlice = createSlice({
     [userlogi.fulfilled]: (state, action) => {
       state.status = "successsss";
       state.user = action.payload?.data?.user;
-      localStorage.setItem("token", action.payload.data.token);
+      localStorage.setItem("token", action.payload?.data.token);
     },
     [userlogi.rejected]: (state) => {
       state.status = "fail";
@@ -78,6 +97,24 @@ export const userSlice = createSlice({
       state.user = action.payload?.data?.user;
     },
     [userCurrent.rejected]: (state) => {
+      state.status = "fail";
+    },
+    [deleteuser.pending]: (state) => {
+      state.status = "pending";
+    },
+    [deleteuser.fulfilled]: (state, action) => {
+      state.status = "success";
+    },
+    [deleteuser.rejected]: (state) => {
+      state.status = "fail";
+    },
+    [edituser.pending]: (state) => {
+      state.status = "pending";
+    },
+    [edituser.fulfilled]: (state, action) => {
+      state.status = "success";
+    },
+    [edituser.rejected]: (state) => {
       state.status = "fail";
     },
   },

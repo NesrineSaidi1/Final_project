@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 const UserSchema = new schema({
+  img: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -20,16 +24,14 @@ const UserSchema = new schema({
   password: {
     type: String,
     required: true,
-    
   },
   User_cv: {
     URL: String,
     required: false,
   },
-  isAdmin: {
-    type: Boolean,
-    default: false,
-    
+  category: {
+    type: String,
+    default: "user",
   },
 });
 
